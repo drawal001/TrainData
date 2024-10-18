@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.10)
+project(NTSDK VERSION 0.1)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED TRUE)
+
+add_library(NTSDK SHARED IMPORTED GLOBAL)
+
+set_target_properties(NTSDK PROPERTIES
+ IMPORTED_IMPLIB "${PROJECT_SOURCE_DIR}/lib64/NTControl.lib"
+)
+set_target_properties(NTSDK PROPERTIES
+ IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/lib64/NTControl.dll"
+)
